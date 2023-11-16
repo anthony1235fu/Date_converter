@@ -1,0 +1,17 @@
+def transfer_date(datas):
+    clean_data = [list(data.replace(' ','')) for data in datas]
+    dates = []
+    for i in range(len(clean_data)):
+        year = ''.join(clean_data[i][-4:])
+        month = dict[''.join(clean_data[i][-7:-4])]
+        day = ''.join(clean_data[i][0:2])
+        if ord(list(day)[1]) > 57:
+            day = ''.join(clean_data[i][0:1])
+                
+        date = f'{year}-{month}-{day}'
+        dates.append(date)
+    print(dates)
+
+dict = {'Jan':'01','Feb':'02','Mar':'03','Apr':'04','May':'05','Jun':'06','Jul':'07','Aug':'08','Sep':'09','Oct':'10','Nov':'11','Dec':'12'}
+datas = ['22nd Mar 1963', '17th Apr 1994', '12th Jan 1885', '3rd Nov 1972', '15th Oct 2002']
+transfer_date(datas)
